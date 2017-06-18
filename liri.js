@@ -1,12 +1,11 @@
-var Twitter = require('twitter');
+var Twitter  = require('twitter');
 var spotify = require('node-spotify-api');
 var request = require('request');
 var keys = require('./keys.js');
 
-
-switch (process.argv[2]) {
+switch (process.argv[2]){
     case 'my-tweets':
-        var client = new Twitter({
+        var client = new Twitter ({
             consumer_key: keys.twitterKeys.consumer_key,
             consumer_secret: keys.twitterKeys.consumer_secret,
             access_token_key: keys.twitterKeys.access_token_key,
@@ -14,11 +13,14 @@ switch (process.argv[2]) {
         });
         var params = {screen_name: 'jayhasselbring'};
 
-        client.get('statuses/user_timeline', params, function (error, tweets, response) {
-            if (error) throw error;
-            console.log(error);  // The errors.
-            console.log(tweets);  // The favorites.
-            console.log(response);  // Raw response object.
+        client.get('statuses/user_timeline', params, function(error, tweets, response) {
+            if (!error) {
+                console.log(tweets[0].user.name+' tweeted:');
+                console.log(tweets[0].text+' on '+tweets[0].created_at);
+            }else{
+                //Logging errors
+                console.log(error);
+            }
         });
         break;
     case 'spotify-this-song ':
