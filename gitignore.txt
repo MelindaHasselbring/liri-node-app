@@ -1,2 +1,5 @@
+.idea
 node_modules
 .DS_Store
+homework_instructions.md
+keys.jsgit
