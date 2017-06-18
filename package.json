@@ -1,0 +1,34 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Coding Bootcamp HW",
+  "main": "liri.js",
+  "scripts": {
+    "start": "node ./liri.js",
+    "test": "inspect ./liri.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelindaHasselbring/liri-node-app.git"
+  },
+  "keywords": [
+    "Liri",
+    "Code",
+    "Bootcamp",
+    "MelinsaHasselbring"
+  ],
+  "author": "Melinda Hasselbring",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MelindaHasselbring/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/MelindaHasselbring/liri-node-app#readme",
+  "devDependencies": {
+    "inspect-process": "^0.4.2"
+  },
+  "dependencies": {
+    "node-spotify-api": "^1.0.5",
+    "request": "^2.81.0",
+    "twitter": "^1.7.1"
+  }
+}
