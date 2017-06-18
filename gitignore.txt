@@ -1,4 +1,4 @@
-/.idea/*
-/node_modules/*
+.idea
+node_modules
 .DS_Store
-/homework_instructions.md
+homework_instructions.md
