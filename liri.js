@@ -1,6 +1,6 @@
 var Twitter  = require('twitter');
-var spotify = require('node-spotify-api');
-var request = require('request');
+var Spotify = require('node-spotify-api');
+var Request = require('request');
 var keys = require('./keys.js');
 
 switch (process.argv[2]){
@@ -11,12 +11,16 @@ switch (process.argv[2]){
             access_token_key: keys.twitterKeys.access_token_key,
             access_token_secret: keys.twitterKeys.access_token_secret
         });
-        var params = {screen_name: 'jayhasselbring'};
+        var params = {screen_name: 'nodejs'};
 
         client.get('statuses/user_timeline', params, function(error, tweets, response) {
             if (!error) {
-                console.log(tweets[0].user.name+' tweeted:');
-                console.log(tweets[0].text+' on '+tweets[0].created_at);
+                var i = 0;
+                console.log(tweets[i].user.name+' tweeted:');
+                for (i = 0; i < 20; i++) {
+                    console.log(i+1+' ) '+tweets[i].text+' on '+tweets[i].created_at);
+                    console.log('------------------------------------------------------------------------------------');
+                }
             }else{
                 //Logging errors
                 console.log(error);
