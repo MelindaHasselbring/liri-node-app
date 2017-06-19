@@ -5,13 +5,13 @@ Run the following command to install all dependencies
 
     npm install
     
-Run the following command instead of "node liri.js" to run the project
+Run the following command to run the project
     
     npm start
 
-Run the following command to inspect instead of "inspect liri.js"
+Run the following command to inspect
 
-    npm inspect
+    npm test
     
 Install production dependencies using this command
 
