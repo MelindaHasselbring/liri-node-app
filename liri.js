@@ -27,7 +27,7 @@ switch (process.argv[2]){
             }
         });
         break;
-    case 'spotify-this-song ':
+    case 'spotify-this-song':
         console.log(spotify);
         break;
     case 'movie-this':
