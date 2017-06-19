@@ -1,5 +1,5 @@
 # Follow these to get started
-## Initial Instructions
+## Installation Instructions
 
 Run the following command to install all dependencies 
 
