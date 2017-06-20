@@ -4,12 +4,12 @@
   "description": "Coding Bootcamp HW",
   "main": "liri.js",
   "scripts": {
-    "start": "node ./liri.js",
-    "tweet": "node ./liri.js my-tweets",
-    "spotify": "node ./liri.js spotify-this-song",
-    "movie": "node ./liri.js movie-this",
-    "do": "node ./liri.js do-what-it-says",
-    "test": "inspect ./liri.js"
+    "start": "node liri.js",
+    "tweet": "node liri.js my-tweets",
+    "spotify": "node liri.js spotify-this-song",
+    "movie": "node liri.js movie-this",
+    "do": "node liri.js do-what-it-says",
+    "test": "inspect liri.js"
   },
   "repository": {
     "type": "git",

@@ -28,7 +28,27 @@ switch (process.argv[2]){
         });
         break;
     case 'spotify-this-song':
-        console.log(spotify);
+
+        var song;
+
+        if (!process.argv[3]) {
+            song = 'The Sign';
+        } else {
+            song = process.argv[3];
+        }
+
+        var spotify = new Spotify({
+            id: keys.spotifyKeys.id,
+            secret: keys.spotifyKeys.secret
+        });
+
+        spotify.search({type: 'track', query: song}, function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
+            }
+
+            console.log(data.tracks);
+        });
         break;
     case 'movie-this':
         console.log('Movies');
