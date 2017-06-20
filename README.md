@@ -7,11 +7,11 @@ Run the following command to install all dependencies
     
 Run the following command to run the project
     
-    npm start
-
-Run the following command to inspect
-
-    npm test
+    node liri.js
+    node liri.js my-tweets
+    node liri.js spotify-this-song
+    node liri.js movie-this
+    node liri.js do-what-it-says
     
 Install production dependencies using this command
 
