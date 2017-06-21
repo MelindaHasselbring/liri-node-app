@@ -1,33 +1,45 @@
+//Require dependencies
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
 var keys = require('./keys.js');
 var fs = require('fs');
+
+//Switch statement inside a function to allow running switch under different state
+//Could've been done in OOP manner but seems a bit overkill
 function execute() {
+    //Switch statement to separate each codes in blocks resulting in cleaner code
     switch (process.argv[2]) {
+        //Twitter API
         case 'my-tweets':
+            //Building the client object using the supplied keys
             var client = new Twitter({
                 consumer_key: keys.twitterKeys.consumer_key,
                 consumer_secret: keys.twitterKeys.consumer_secret,
                 access_token_key: keys.twitterKeys.access_token_key,
                 access_token_secret: keys.twitterKeys.access_token_secret
             });
-            var params = {screen_name: 'nodejs'};
+
+            //Defining the targeted twitter user. change param.screen_name to the twitter handler that you want to target.
+            var params = {screen_name: 'nodejs'};//This will show 20 of nodejs' tweets
 
             client.get('statuses/user_timeline', params, function (error, tweets, response) {
                 if (!error) {
-                    var i = 0;
-                    console.log(tweets[i].user.name + ' tweeted:');
+                    console.log(tweets[0].user.name + ' tweeted:');//This will grab the target's name and print int on the screen
+
+                    //For loop to iterate through all 20 tweets
                     for (i = 0; i < 20; i++) {
                         console.log(i + 1 + ' ) ' + tweets[i].text + ' on ' + tweets[i].created_at);
                         console.log('------------------------------------------------------------------------------------');
                     }
                 } else {
+
                     //Logging errors
                     console.log(error);
                 }
             });
             break;
+        //Spotifi API
         case 'spotify-this-song':
 
             var song;
@@ -60,6 +72,7 @@ function execute() {
 
             });
             break;
+        //OMDB API
         case 'movie-this':
             request('http://www.omdbapi.com/?apikey=40e9cece&t=' + process.argv[3], function (error, response, body) {
                 console.log('Title:                ' + JSON.parse(body).Title);
@@ -74,6 +87,8 @@ function execute() {
             break;
     }
 }
+
+
 if (process.argv[2] === 'do-what-it-says') {
     fs.readFile('./random.txt', "utf-8", function (err, data) {
         if (err) throw err;
