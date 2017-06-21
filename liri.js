@@ -74,6 +74,7 @@ function execute() {
             break;
         //OMDB API
         case 'movie-this':
+            //Basic REST API that returns an object on request
             request('http://www.omdbapi.com/?apikey=40e9cece&t=' + process.argv[3], function (error, response, body) {
                 console.log('Title:                ' + JSON.parse(body).Title);
                 console.log('Year:                 ' + JSON.parse(body).Year);
