@@ -18,7 +18,7 @@ Install development dependencies using this command
 ##Operations instructions
 
 Run the following command to run the project
-    
+
     node liri.js
     node liri.js my-tweets
     node liri.js spotify-this-song <song title>

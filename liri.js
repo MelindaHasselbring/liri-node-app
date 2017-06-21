@@ -1,6 +1,6 @@
 var Twitter  = require('twitter');
 var Spotify = require('node-spotify-api');
-var Request = require('request');
+var request = require('request');
 var keys = require('./keys.js');
 
 switch (process.argv[2]){
@@ -60,7 +60,17 @@ switch (process.argv[2]){
         });
         break;
     case 'movie-this':
-        console.log('Movies');
+        request('http://www.omdbapi.com/?apikey=40e9cece&t='+process.argv[3], function (error, response, body) {
+            console.log(JSON.parse(body));
+            console.log('Title:                '+JSON.parse(body).Title);
+            console.log('Year:                 '+JSON.parse(body).Year);
+            console.log('IMDB Rating:          '+JSON.parse(body).imdbRating);
+            console.log('Country:              '+JSON.parse(body).Country);
+            console.log('Language:             '+JSON.parse(body).Language);
+            console.log('Plot:                 '+JSON.parse(body).Plot);
+            console.log('Casts:                '+JSON.parse(body).Actors);
+            console.log('Rotten Tomatoes URL:   https://www.i-haveNoClue.com#FoReals');
+        });
         break;
     case 'do-what-it-says':
         console.log('Do what it says');
