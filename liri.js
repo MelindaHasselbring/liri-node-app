@@ -32,7 +32,7 @@ switch (process.argv[2]){
         var song;
 
         if (!process.argv[3]) {
-            song = 'The Sign';
+            song = '"The Sign" by ace of base';
         } else {
             song = process.argv[3];
         }
@@ -47,7 +47,16 @@ switch (process.argv[2]){
                 return console.log('Error occurred: ' + err);
             }
 
-            console.log(data.tracks);
+            for(i = 0; i < data.tracks.items.length; i++){
+                for(x = 0; x < data.tracks.items[i].album.artists.length; x++){
+                    console.log('Artist:      '+data.tracks.items[i].album.artists[x].name);
+                    console.log('Title:       '+data.tracks.items[i].name);
+                    console.log('Preview URL: '+data.tracks.items[i].preview_url);
+                    console.log('Album:       '+data.tracks.items[i].album.name);
+                    console.log('----------------------------------------------------------');
+                }
+            }
+
         });
         break;
     case 'movie-this':
