@@ -61,7 +61,6 @@ switch (process.argv[2]){
         break;
     case 'movie-this':
         request('http://www.omdbapi.com/?apikey=40e9cece&t='+process.argv[3], function (error, response, body) {
-            console.log(JSON.parse(body));
             console.log('Title:                '+JSON.parse(body).Title);
             console.log('Year:                 '+JSON.parse(body).Year);
             console.log('IMDB Rating:          '+JSON.parse(body).imdbRating);
