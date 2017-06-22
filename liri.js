@@ -93,7 +93,6 @@ function execute() {
 if (process.argv[2] === 'do-what-it-says') {
     fs.readFile('./random.txt', "utf-8", function (err, data) {
         if (err) throw err;
-        console.log(data);
         var obj = data.split(',');
         process.argv[2] = obj[0];
         process.argv[3] = obj[1];

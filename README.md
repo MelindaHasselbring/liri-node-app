@@ -1,5 +1,5 @@
 # Follow these to get started
-## Installation Instructions
+### Installation Instructions
 
 Run the following command to install all dependencies 
 
@@ -16,17 +16,17 @@ Install development dependencies using this command
     npm install <package-name> --save-dev
 
 
-##Operations instructions
+###Operations instructions
 
 Run the following command to run the project
 
     node liri.js
     node liri.js my-tweets
     node liri.js spotify-this-song <song title>
-    node liri.js movie-this
+    node liri.js movie-this <movie title>
     node liri.js do-what-it-says
     
-##Business Flow
+###Business Flow
 1. liri.js is executed
 2. Dependencies are added
 3. fx execute() is created
